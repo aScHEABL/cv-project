@@ -7,9 +7,9 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-
-      </div>
+      <main className="grid-cols-2">
+        
+      </main>
     )
   }
 }
