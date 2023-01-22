@@ -1,17 +1,15 @@
 import React, { Component } from "react";
 
-class PreviewSetion extends Component {
+class Education extends Component {
     constructor(props) {
         super(props);
     }
 
     render() {
         return (
-            <section className="bg-slate-400 ">
-
-            </section>
+            <div></div>
         )
     }
 }
 
-export default PreviewSetion;
+export default Education;
