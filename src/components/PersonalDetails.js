@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Photo from "./Photo";
 
 class PersonalDetails extends Component {
     constructor(props) {
@@ -7,9 +8,12 @@ class PersonalDetails extends Component {
 
     render() {
         return (
-        <section className="flex gap-4 h-1/2 flex-wrap">
+        <section className="h-1/2 grid">
             <h2 className="text-slate-100 text-2xl">Personal Details</h2>
-            <hr className="h-0.5 bg-slate-200"/>
+            <br />
+            <div className="flex gap-4 h-fit w-fit">
+                <Photo />
+            </div>
         </section>
         )
     }

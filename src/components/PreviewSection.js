@@ -6,8 +6,13 @@ class PreviewSetion extends Component {
     }
 
     render() {
+        const PreviewStyle = {
+            position: "sticky",
+            top: "0",
+            height: "100vh"
+        }   
         return (
-            <section className="bg-slate-400 ">
+            <section className="bg-slate-400 sticky top-0 h-full">
 
             </section>
         )
