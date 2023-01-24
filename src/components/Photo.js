@@ -7,14 +7,10 @@ class Photo extends Component {
     }
 
     render() {
-        const userPfpClass = {
-            width: "128px",
-            height: "128px"
-        }
         return (
-            <div>
+            <div className="flex flex-wrap gap-1 h-fit w-fit row-span-2">
                 <label className="text-slate-50">Photo</label>
-                <img src={userPfp} className="h-32 w-32" alt="user avatar"></img>
+                <img src={userPfp} className="w-32" alt="user avatar"></img>
             </div>
         )
     }
