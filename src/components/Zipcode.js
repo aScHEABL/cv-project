@@ -10,7 +10,7 @@ class Zipcode extends Component {
             <div className="flex flex-wrap gap-1">
                 <label className="text-slate-100">Zipcode</label>
                 <br />
-                <input className="h-10 w-28 px-3 bg-slate-500 rounded text-slate-50"/>
+                <input className="h-10 w-full px-3 bg-slate-500 rounded text-slate-50"/>
             </div>
         )
     }

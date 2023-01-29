@@ -33,7 +33,7 @@ class CVtitle extends Component {
             width: "7rem"
         }
         return (
-        <div className="flex basis-full p-2 h-14 content-center justify-center gap-4">
+        <div className="flex basis-full py-2 h-14 content-center justify-center gap-4">
             <input className="h-10 px-3 rounded 
             bg-slate-500 text-slate-50 outline-none text-2xl
             focus:outline-blue-400 " 

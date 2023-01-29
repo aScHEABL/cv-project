@@ -9,7 +9,7 @@ class App extends Component {
 
   render() {
     return (
-      <main className="grid grid-cols-2 h-screen">
+      <main className="grid grid-cols-[1fr_1fr] h-screen">
         <EditorSection />
         <PreviewSetion />
       </main>
