@@ -8,13 +8,22 @@ class PersonalDetails extends Component {
     }
 
     render() {
-        const PfpIconStyle = {
-            height: '8rem',
-            width: '8rem',
-            filter: 'invert()'
+        // const PfpIconStyle = {
+        //     height: '8rem',
+        //     width: '8rem',
+        //     filter: 'invert()'
+        // }
+        const QuillContainerStyle = {
+            backgroundColor: '#dedede',
+            borderRadius: '4px',
+            border: 'none',
+            outline: 'none',
+            
         }
-        const QuillStyle = {
-            backgroundColor: 'rgb(28, 28, 28)'
+        const QuillEditorStyle = {
+            height: '9rem',
+            borderRadius: '4px',
+            border: 'none',
         }
         return(
             <div className="py-4 px-8 grid grid-cols-[1fr_1fr] gap-3 bg-component-gray h-fit w-full rounded-xl">
@@ -25,8 +34,8 @@ class PersonalDetails extends Component {
                 <input className="h-12 bg-input-box-gray rounded px-3 col-span-2" placeholder="Website" />
                 <input className="h-12 bg-input-box-gray rounded px-3" placeholder="Email" />
                 <input className="h-12 bg-input-box-gray rounded px-3" placeholder="Number" />
-                <ReactQuill style={QuillStyle} className="h-48 col-span-2" theme="snow">
-                    <div style={{height: '9rem'}}></div>
+                <ReactQuill style={QuillContainerStyle} className="h-48 col-span-2" theme="snow">
+                    <div style={QuillEditorStyle}></div>
                 </ReactQuill>
             </div>
         )

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import CVcreator from "./CVcreator";
 import PersonalDetails from "./PersonalDetails";
-import ProfessionSummary from "./ProfessionSummary";
 import Education from "./Education";
 
 class EditorSection extends Component {
@@ -14,7 +13,6 @@ class EditorSection extends Component {
             <section className="flex flex-wrap flex-col gap-8 h-full">
                 <CVcreator />
                 <PersonalDetails />
-                <ProfessionSummary />
                 <Education />
             </section>
         )
