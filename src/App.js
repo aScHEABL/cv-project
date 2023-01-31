@@ -9,7 +9,7 @@ class App extends Component {
 
   render() {
     return (
-      <main className="px-10 py-5 bg-black grid gap-52 grid-cols-[0.7fr_1fr] h-screen">
+      <main className="px-10 py-5 bg-black grid gap-52 grid-cols-[0.7fr_1fr] h-max">
         <EditorSection />
         <PreviewSetion />
       </main>

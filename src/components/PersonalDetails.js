@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
 
 class PersonalDetails extends Component {
     constructor(props) {
@@ -25,9 +23,7 @@ class PersonalDetails extends Component {
                 <input className="h-12 bg-input-box-gray rounded px-3 col-span-2" placeholder="Website" />
                 <input className="h-12 bg-input-box-gray rounded px-3" placeholder="Email" />
                 <input className="h-12 bg-input-box-gray rounded px-3" placeholder="Number" />
-                <ReactQuill style={QuillStyle} className="h-48 col-span-2" theme="snow">
-                    <div style={{height: '9rem'}}></div>
-                </ReactQuill>
+                <textarea className="h-32 col-span-2 bg-input-box-gray rounded px-3 py-3" placeholder="Tell something about yourself!" />
             </div>
         )
     }
