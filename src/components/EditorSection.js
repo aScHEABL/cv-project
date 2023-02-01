@@ -12,7 +12,7 @@ class EditorSection extends Component {
 
     render() {
         return(
-            <section className="flex flex-wrap flex-col gap-8 h-full">
+            <section className="flex flex-wrap flex-col gap-8 h-fit shrink-0">
                 <CVcreator />
                 <PersonalDetails />
                 <Employment />

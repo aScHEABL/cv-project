@@ -11,7 +11,14 @@ module.exports = {
       'white': '#fff',
       'mint': '#79d2b5'
     },
-    extend: {},
+    extend: {
+      height: {
+        'preview-section': '95.5vh',
+      },
+      width: {
+        'preview-section': '38.4375rem',
+      }
+    },
   },
   plugins: [],
 }

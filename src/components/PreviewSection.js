@@ -7,7 +7,7 @@ class PreviewSection extends Component {
 
     render() {
         return(
-            <section className="h-screen sticky top-0 bg-white rounded-lg">
+            <section className=" h-preview-section w-preview-section sticky top-5 bottom-5 bg-white rounded-lg shrink-0">
                 
             </section>
         )

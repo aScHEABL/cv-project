@@ -6,14 +6,6 @@ class PersonalDetails extends Component {
     }
 
     render() {
-        const PfpIconStyle = {
-            height: '8rem',
-            width: '8rem',
-            filter: 'invert()'
-        }
-        const QuillStyle = {
-            backgroundColor: 'rgb(28, 28, 28)'
-        }
         return(
             <div className="py-4 px-8 grid grid-cols-[1fr_1fr] gap-3 bg-component-gray h-fit w-full rounded-xl">
                 <h2 className="h-9 col-span-2 text-white text-2xl">Personal Details</h2>
