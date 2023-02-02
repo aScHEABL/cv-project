@@ -17,6 +17,10 @@ module.exports = {
       },
       width: {
         'preview-section': '38.4375rem',
+      },
+      fontFamily: {
+        'roboto-slab': ['Roboto Slab', 'sans-serif'],
+        'roboto-mono': ['Roboto Mono', 'monospace'],
       }
     },
   },
