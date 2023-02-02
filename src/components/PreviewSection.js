@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "./Header";
 import CurrentPos from "./CurrentPos";
 import Sidebar from "./Sidebar";
+import Content from "./Content";
 
 class PreviewSection extends Component {
     constructor(props) {
@@ -14,6 +15,7 @@ class PreviewSection extends Component {
                 <Header />
                 <CurrentPos />
                 <Sidebar />
+                <Content />
             </section>
         )
     }
