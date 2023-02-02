@@ -9,9 +9,9 @@ class Content extends Component {
         return(
             <div className="flex flex-col p-8">
                 <div className="flex flex-wrap gap-3">
-                    <h3 className="font-work-sans text-lg tracking-[4px] after::bg-gray after::rounded after::content-[''] 
-                    after::h-2 after::w-0.5">PROFILE</h3>
-                    <p className="font-work-sans text-xs font-normal ">Motivated and results-driven Senior Software Engineer with 8+ years 
+                    <h3 className="w-full font-work-sans text-lg tracking-[4px]">PROFILE</h3>
+                    <div className="h-0.5 w-16 bg-component-gray" />
+                    <p className="font-work-sans text-[11px] font-normal">Motivated and results-driven Senior Software Engineer with 8+ years 
                         of experience in my field. I have continuously demonstrated experience 
                         in improving software performance by implementing new ideas, updating, 
                         testing and coding. Experience in development tools which increase accuracy 
