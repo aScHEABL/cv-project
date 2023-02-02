@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Header from "./Header";
+import CurrentPos from "./CurrentPos";
+import Sidebar from "./Sidebar";
 
 class PreviewSection extends Component {
     constructor(props) {
@@ -8,8 +10,10 @@ class PreviewSection extends Component {
 
     render() {
         return(
-            <section className="grid grid-rows-[1fr_0.3fr_5fr] grid-cols-[3.5fr_6.5fr] h-preview-section w-preview-section sticky top-5 bottom-5 bg-white rounded-lg shrink-0">
+            <section className="grid grid-rows-[0.8fr_0.25fr_5fr] grid-cols-[3.5fr_7fr] h-preview-section w-preview-section sticky top-5 bottom-5 bg-white rounded-lg shrink-0">
                 <Header />
+                <CurrentPos />
+                <Sidebar />
             </section>
         )
     }

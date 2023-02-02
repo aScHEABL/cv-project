@@ -7,9 +7,9 @@ class Header extends Component {
 
     render() {
         return(
-            <div className="h-36 col-span-2 flex justify-center items-center gap-8">
-                <h1 className="text-5xl font-roboto-mono font-semibold tracking-widest">NIKOLA</h1>
-                <h1 className="text-5xl font-roboto-mono font-normal tracking-widest">TESLA</h1>
+            <div className="col-span-2 flex justify-center items-center gap-8">
+                <h1 className="text-4xl font-work-sans font-medium tracking-[0.3em]">NIKOLA</h1>
+                <h1 className="text-4xl font-work-sans font-light tracking-[0.3em]">TESLA</h1>
             </div>
         )
     }

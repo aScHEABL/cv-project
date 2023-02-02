@@ -9,7 +9,8 @@ module.exports = {
       'input-box-gray': '#2d2d2d',
       'black': '#000',
       'white': '#fff',
-      'mint': '#79d2b5'
+      'mint': '#79d2b5',
+      'light-grey': '#e7e8ea',
     },
     extend: {
       height: {
@@ -19,8 +20,8 @@ module.exports = {
         'preview-section': '38.4375rem',
       },
       fontFamily: {
-        'roboto-slab': ['Roboto Slab', 'sans-serif'],
-        'roboto-mono': ['Roboto Mono', 'monospace'],
+        'roboto-flex': ['Roboto Flex', 'sans-serif'],
+        'work-sans': ['Work Sans', 'sans-serif'],
       }
     },
   },
