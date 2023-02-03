@@ -7,11 +7,11 @@ class Content extends Component {
 
     render() {
         return(
-            <div className="flex flex-col p-8">
-                <div className="flex flex-wrap gap-3">
+            <div className="flex flex-col p-6">
+                <div className="flex flex-wrap gap-3 pb-8">
                     <h3 className="w-full font-work-sans text-[13px] tracking-[4px]">PROFILE</h3>
                     <div className="h-0.5 w-16 bg-component-gray" />
-                    <p className="font-work-sans text-[11px] font-normal text-[#2e2e2e]">
+                    <p className="font-work-sans text-[11px] font-normal text-[#2e2e2e] ">
                         Motivated and results-driven Senior Software Engineer with 8+ years 
                         of experience in my field. I have continuously demonstrated experience 
                         in improving software performance by implementing new ideas, updating, 
@@ -22,11 +22,15 @@ class Content extends Component {
                         competitive environment when pursuing sports.
                     </p>
                 </div>
-                <div className="flex flex-wrap gap-3 py-8">
+                <div className="flex flex-wrap gap-3 pb-8">
                     <h3 className="w-full font-work-sans text-[13px] tracking-[4px]">WORK EXPERIENCE</h3>
                     <div className="h-0.5 w-16 bg-component-gray" />
-                    <h4 className="w-full font-work-sans text-xs font-semibold">Junior Software Engineer</h4>
-                    <h5></h5>
+                    <div className="flex w-full flex-wrap gap-0.5">
+                        <h4 className="w-full font-work-sans text-xs font-semibold">Junior Software Engineer</h4>
+                        <h5 className="text-[11px]">2016</h5>
+                        <label className="text-[11px]"> - </label>
+                        <h5 className="text-[11px]">2022</h5>
+                    </div>
                     <p className="font-work-sans text-[11px] font-normal text-[#2e2e2e]">
                     I provided technical leadership for complex projects. I used the latest technologies 
                     such as Cloud Service, Visual Studio 2019 and Azure DevOps. I gained experience with 
@@ -35,8 +39,19 @@ class Content extends Component {
                     including testing, debugging, technical analysis, design and coding.
                     </p>
                 </div>
-                <div>
-
+                <div className="flex flex-wrap gap-3">
+                    <div className="flex w-full flex-wrap gap-0.5">
+                        <h4 className="w-full font-work-sans text-xs font-semibold">Swimming Pool Lifeguard</h4>
+                        <h5 className="text-[11px]">2012</h5>
+                        <label className="text-[11px]"> - </label>
+                        <h5 className="text-[11px]">2016</h5>
+                    </div>
+                    <p className="font-work-sans text-[11px] font-normal text-[#2e2e2e]">
+                        Experienced and certified lifeguard with a passion for water safety. 
+                        Skilled in monitoring and maintaining safe swimming conditions, 
+                        performing water rescues, and providing first aid. Able to maintain 
+                        a high level of alertness, professionalism and focus while on duty.
+                    </p>
                 </div>
             </div>
         )
