@@ -11,7 +11,7 @@ class PersonalDetails extends Component {
                 <h2 className="h-9 col-span-2 text-white text-2xl">Personal Details</h2>
                 <input className="h-12 bg-input-box-gray rounded px-3 text-white" placeholder="First Name" 
                 onChange={this.handleChange} name="firstName" />
-                <input className="h-12 bg-input-box-gray rounded px-3" placeholder="Last Name" 
+                <input className="h-12 bg-input-box-gray rounded px-3 text-white" placeholder="Last Name" 
                 onChange={this.handleChange} name="lastName" />
                 <input className="h-12 bg-input-box-gray rounded px-3 col-span-2 text-white" placeholder="Address" 
                 onChange={this.handleChange} name="address" />
