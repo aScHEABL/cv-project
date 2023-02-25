@@ -1,18 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 
-class CurrentPos extends Component {
-    constructor(props) {
-        super(props);
-    }
+const CurrentPos = () => {
 
-    render() {
-        return(
-            <div className="bg-light-grey col-span-2 flex justify-center items-center font-work-sans 
-            text-lg font-light tracking-widest">
-                <h2></h2>
-            </div>
-        )
-    }
+    return(
+        <div className="bg-light-grey col-span-2 flex justify-center items-center font-work-sans 
+        text-lg font-light tracking-widest">
+            <h2></h2>
+        </div>
+    )
 }
 
 export default CurrentPos;
