@@ -3,9 +3,7 @@ import { useCvContext } from "../context/cvContext";
 
 const Header = () => {
     const [cvState] = useCvContext();
-    useEffect(() => {
-        console.log('re-rendered!')
-    }, [cvState])
+    useEffect(() => {}, [cvState]);
 
     return(
         <div className="col-span-2 flex justify-center items-center gap-8">
