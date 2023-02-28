@@ -1,4 +1,3 @@
-import React from "react";
 import EditorSection from "./components/EditorSection";
 import PreviewSetion from "./components/PreviewSection";
 
