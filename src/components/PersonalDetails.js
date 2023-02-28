@@ -23,15 +23,19 @@ const PersonalDetails = () => {
             value={cvState.address} 
             onChange={(e) => handleChange('address', e.target.value)} />
             <input className="h-12 bg-input-box-gray rounded px-3 col-span-2
-            text-white" placeholder="Website" name="website"
-             />
+            text-white" placeholder="Website" name="website" 
+            value={cvState.website}
+            onChange={(e) => handleChange('website', e.target.value)} />
             <input className="h-12 bg-input-box-gray rounded px-3 text-white" 
-            placeholder="Email" name="email" />
+            placeholder="Email" name="email" value={cvState.email}
+            onChange={(e) => handleChange('email', e.target.value)} />
             <input className="h-12 bg-input-box-gray rounded px-3 text-white"
-            placeholder="Phone Number" name="phoneNumber" />
+            placeholder="Phone Number" name="phoneNumber" value={cvState.phone}
+            onChange={(e) => handleChange('phone', e.target.value)} />
             <textarea className="h-32 col-span-2 bg-input-box-gray rounded
             px-3 py-3 text-white" placeholder="Tell something about yourself!" 
-            name="introduction" />
+            name="introduction" value={cvState.intro}
+            onChange={(e) => handleChange('intro', e.target.value)} />
         </div>
     )
 }
