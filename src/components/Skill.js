@@ -11,7 +11,7 @@ const Skill = () => {
         bg-component-gray h-fit w-full rounded-xl">
             <h2 className="h-9 col-span-2 text-white text-2xl">Skills</h2>
             <div className="flex items-center gap-3">
-                <input className="bg-input-box-gray h-12 w-full rounded px-3" 
+                <input className="bg-input-box-gray h-12 w-full rounded px-3 text-white" 
                 placeholder="React" />
                 <button className="pr-3">
                 <svg style={svgStyle} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -20,7 +20,7 @@ const Skill = () => {
                 </button>
             </div>
             <div className="flex items-center gap-3">
-                <input className="bg-input-box-gray h-12 w-full rounded px-3" 
+                <input className="bg-input-box-gray h-12 w-full rounded px-3 text-white" 
                 placeholder="Node.js" />
                 <button className="pr-3">
                 <svg style={svgStyle} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -29,7 +29,7 @@ const Skill = () => {
                 </button>
             </div>
             <div className="flex items-center gap-3">
-                <input className="bg-input-box-gray h-12 w-full rounded px-3" 
+                <input className="bg-input-box-gray h-12 w-full rounded px-3 text-white" 
                 placeholder="PostgreSQL" />
                 <button className="pr-3">
                 <svg style={svgStyle} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
