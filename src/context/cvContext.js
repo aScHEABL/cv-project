@@ -51,7 +51,7 @@ const reducer = (state, action) => {
         case 'jobTitle_second':
             return {
                 ...state,
-                jobTitle_second: action.payload.jobDesc_second
+                jobTitle_second: action.payload.jobTitle_second
             }
         case 'employer_first':
             return {
