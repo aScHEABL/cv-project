@@ -46,7 +46,7 @@ const reducer = (state, action) => {
         case 'jobTitle_first':
             return {
                 ...state,
-                intro: action.payload.jobTitle_first
+                jobTitle_first: action.payload.jobTitle_first
             }
         case 'jobTitle_second':
             return {
@@ -108,7 +108,7 @@ const reducer = (state, action) => {
     }
 }
 
-const CvContextProvider = ( {children }) => {
+const CvContextProvider = ( { children }) => {
     const valueAndDispatcher = useReducer(reducer, {
         firstName: '',
         lastName: '',
