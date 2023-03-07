@@ -4,7 +4,6 @@ import { useCvContext } from "../context/cvContext";
 const PersonalDetails = () => {
     const [cvState, dispatch] = useCvContext();
     const handleChange = (key, value) => {
-        console.log(cvState);
         dispatch({ type: `${key}`, payload: { [key]: value } });
     }
 
