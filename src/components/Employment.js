@@ -20,11 +20,11 @@ const Employment = () => {
             placeholder="Employer" name="employer_first" value={cvState.employer_first}
             onChange={(e) => handleChange('employer_first', e.target.value)} />
             <div className="flex w-full h-fit gap-3 justify-between items-center">
-                <input className="bg-input-box-gray w-28 h-12 rounded px-3 text-white" 
+                <input type="date" date-date-format="MM YYYY" className="bg-input-box-gray w-28 h-12 rounded px-3 text-white" 
                 placeholder="MM/YYYY" name="startDate_first" value={cvState.startDate_first}
                 onChange={(e) => handleChange('startDate_first', e.target.value)} />
                 <label className="text-white">to</label>
-                <input className="bg-input-box-gray w-28 h-12 rounded px-3 text-white" 
+                <input type="date" date-date-format="MM YYYY" className="bg-input-box-gray w-28 h-12 rounded px-3 text-white" 
                 placeholder="MM/YYYY" name="endDate_first" value={cvState.endDate_first}
                 onChange={(e) => handleChange('endDate_first', e.target.value)} />
             </div>
@@ -45,11 +45,11 @@ const Employment = () => {
             placeholder="Employer" name="employer_second" value={cvState.employer_second}
             onChange={(e) => handleChange('employer_second', e.target.value)} />
             <div className="flex w-full h-fit gap-3 justify-between items-center">
-                <input className="bg-input-box-gray w-28 h-12 rounded px-3 text-white"
+                <input type="date" className="bg-input-box-gray w-28 h-12 rounded px-3 text-white"
                 placeholder="MM/YYYY" name="startDate_second" value={cvState.startDate_second}
                 onChange={(e) => handleChange('startDate_second', e.target.value)} />
                 <label className="text-white">to</label>
-                <input className="bg-input-box-gray w-28 h-12 rounded px-3 text-white" 
+                <input type="date" className="bg-input-box-gray w-28 h-12 rounded px-3 text-white" 
                 placeholder="MM/YYYY" name="endDate_second" value={cvState.endDate_second}
                 onChange={(e) => handleChange('endDate_second', e.target.value)} />
             </div>
