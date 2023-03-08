@@ -42,23 +42,23 @@ const Sidebar = () => {
                 </div>
             </div>
             <div>
-                <h3 className="text-white text-sm tracking-[0.25em] font-work-sans font-normal pb-6"></h3>
+                <h3 className="text-white text-sm tracking-[0.25em] font-work-sans font-normal pb-6">EDUCATION</h3>
                 <div className="flex flex-wrap gap-1">
-                    <h3 className="text-white text-[12px] font-work-sans font-medium"></h3>
-                    <p className="text-white text-[11px] font-work-sans font-normal text-[#a6a6a6]"></p>
+                    <h3 className="text-white text-[12px] font-work-sans font-medium">{cvState.school}</h3>
+                    <p className="text-white text-[11px] font-work-sans font-normal text-[#a6a6a6]">{cvState.degree}</p>
                     <div className="flex gap-1 w-full">
-                        <p className="text-white text-[10px] font-work-sans font-normal text-[#a6a6a6]"></p>
-                        <p className="text-white text-[10px] font-work-sans font-normal text-[#a6a6a6]"></p>
-                        <p className="text-white text-[10px] font-work-sans font-normal text-[#a6a6a6]"></p>
+                        <p className="text-white text-[10px] font-work-sans font-normal text-[#a6a6a6]">{cvState.eduStartDate}</p>
+                        <label className="text-white text-[10px] font-work-sans font-normal text-[#a6a6a6]"> - </label>
+                        <p className="text-white text-[10px] font-work-sans font-normal text-[#a6a6a6]">{cvState.eduEndDate}</p>
                     </div>
                 </div>
             </div>
             <div>
-                <h3 className="text-white text-sm tracking-[0.25em] font-work-sans font-normal pb-6"></h3>
+                <h3 className="text-white text-sm tracking-[0.25em] font-work-sans font-normal pb-6">SKILLS</h3>
                 <ul className="text-white pl-5 flex flex-warp flex-col text-[11px] text-[#a6a6a6] gap-1">
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>{cvState.skill_1}</li>
+                    <li>{cvState.skill_2}</li>
+                    <li>{cvState.skill_3}</li>
                 </ul>
             </div>
         </div>
