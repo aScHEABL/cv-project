@@ -103,6 +103,46 @@ const reducer = (state, action) => {
                 ...state,
                 jobDesc_second: action.payload.jobDesc_second
             }
+        case 'school':
+            return {
+                ...state,
+                school: action.payload.school
+            }
+        case 'degree':
+            return {
+                ...state,
+                degree: action.payload.degree
+            }
+        case 'eduStartDate':
+            return {
+                ...state,
+                eduStartDate: action.payload.eduStartDate
+            }
+        case 'eduEndDate':
+            return {
+                ...state,
+                eduEndDate: action.payload.eduEndDate
+            }
+        case 'eduCity':
+            return {
+                ...state,
+                eduCity: action.payload.eduCity
+            }
+        case 'skill_1':
+            return {
+                ...state,
+                skill_1: action.payload.skill_1
+            }
+        case 'skill_2':
+            return {
+                ...state,
+                skill_2: action.payload.skill_2
+            }
+        case 'skill_3':
+            return {
+                ...state,
+                skill_3: action.payload.skill_3
+            }
         default:
             return state;
     }
@@ -129,6 +169,14 @@ const CvContextProvider = ( { children }) => {
         endDate_second: '',
         city_second: '',
         jobDesc_second: '',
+        school: '',
+        degree: '',
+        eduStartDate: '',
+        eduEndDate: '',
+        eduCity: '',
+        skill_1: '',
+        skill_2: '',
+        skill_3: ''
     })
     return (
         <cvContext.Provider value={valueAndDispatcher}>
