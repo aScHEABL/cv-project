@@ -45,11 +45,14 @@ const Sidebar = () => {
                 <h3 className="text-white text-sm tracking-[0.25em] font-work-sans font-normal pb-6">EDUCATION</h3>
                 <div className="flex flex-wrap gap-1">
                     <h3 className="text-white text-[12px] font-work-sans font-medium">{cvState.school}</h3>
-                    <p className="text-white text-[11px] font-work-sans font-normal text-[#a6a6a6]">{cvState.degree}</p>
+                    <div className="h-0 w-full"></div>
+                    <label className="text-white text-[11px] font-work-sans font-normal text-[#a6a6a6]">{cvState.degree}</label>
                     <div className="flex gap-1 w-full">
-                        <p className="text-white text-[10px] font-work-sans font-normal text-[#a6a6a6]">{cvState.eduStartDate}</p>
-                        <label className="text-white text-[10px] font-work-sans font-normal text-[#a6a6a6]"> - </label>
-                        <p className="text-white text-[10px] font-work-sans font-normal text-[#a6a6a6]">{cvState.eduEndDate}</p>
+                        <label className="text-white text-[10px] font-work-sans font-normal text-[#a6a6a6]">{cvState.eduStartDate}</label>
+                        <label className="text-white text-[10px] font-work-sans font-normal text-[#a6a6a6]">
+                            {cvState.eduStartDate && cvState.eduEndDate !== "" ? <label> - </label> : null }
+                        </label>
+                        <label className="text-white text-[10px] font-work-sans font-normal text-[#a6a6a6]">{cvState.eduEndDate}</label>
                     </div>
                 </div>
             </div>

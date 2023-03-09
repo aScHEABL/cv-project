@@ -21,7 +21,9 @@ const Content = () => {
                 <div className="flex w-full flex-wrap gap-0.5">
                     <h4 className="w-full font-work-sans text-xs font-semibold">{cvState.jobTitle_first}</h4>
                     <h5 className="text-[11px]">{cvState.startDate_first}</h5>
-                    <label className="text-[11px]"> - </label>
+                    <label className="text-[11px]">
+                        {cvState.startDate_first && cvState.endDate_first !== "" ? <label> - </label> : null }
+                    </label>
                     <h5 className="text-[11px]">{cvState.endDate_first}</h5>
                 </div>
                 <p className="font-work-sans text-[11px] font-normal text-[#2e2e2e]">
@@ -32,7 +34,9 @@ const Content = () => {
                 <div className="flex w-full flex-wrap gap-0.5">
                     <h4 className="w-full font-work-sans text-xs font-semibold">{cvState.jobTitle_second}</h4>
                     <h5 className="text-[11px]">{cvState.startDate_second}</h5>
-                    <label className="text-[11px]"> - </label>
+                    <label className="text-[11px]">
+                        {cvState.startDate_second && cvState.endDate_second !== "" ? <label> - </label> : null }
+                    </label>
                     <h5 className="text-[11px]">{cvState.endDate_second}</h5>
                 </div>
                 <p className="font-work-sans text-[11px] font-normal text-[#2e2e2e]">
