@@ -6,6 +6,10 @@ const Skill = () => {
     const handleChange = (key, value) => {
         dispatch({ type: `${key}`, payload: { [key]: value } });
     }
+
+    const handleClick = () => {
+        console.log("click handled!");
+    }
     
     const svgStyle = {
         filter: 'invert()',
@@ -16,7 +20,7 @@ const Skill = () => {
         bg-component-gray h-fit w-full rounded-xl">
             <div className="grid grid-cols-[8fr_2fr] items-center ">
                 <h2 className="h-9 text-white text-2xl">Skills</h2>
-                <button className="flex gap-2 bg-mint rounded-xl p-4 text-lg items-center">
+                <button className="flex gap-2 bg-mint rounded-xl p-4 text-lg items-center" onClick={handleClick}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                 </svg>
