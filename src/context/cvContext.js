@@ -1,6 +1,7 @@
 import { createContext, useContext, useReducer } from "react";
 
 const cvContext = createContext();
+const dispatcher = createContext();
 
 const useCvContext = () => {
     return useContext(cvContext);
@@ -48,7 +49,10 @@ const reducer = (state, action) => {
                 ...state,
                 jobs: [
                     ...state.jobs,
-                    action.payload.jobs
+                    {
+                        id: action.id,
+                        title: action.title
+                    }
                 ]
             }
         case 'ADD_SKILL':
