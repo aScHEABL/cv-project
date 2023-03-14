@@ -51,9 +51,25 @@ const reducer = (state, action) => {
                     ...state.jobs,
                     {
                         id: action.id,
-                        title: action.title
+                        title: action.title,
+                        employer: action.employer
                     }
                 ]
+            }
+        case 'CHANGE_JOB':
+            return {
+                ...state,
+                jobs: state.jobs.map((job) => {
+                    if (job.id === action.id) {
+                        return {
+                            ...job,
+                            title: action.title,
+                            employer: action.employer,
+
+                        }
+                    }
+                    return job;
+                })
             }
         case 'ADD_SKILL':
             return {

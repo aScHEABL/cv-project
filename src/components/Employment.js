@@ -10,12 +10,10 @@ const Employment = () => {
     const handleClick = () => {
         dispatch({
             type: 'ADD_JOB', 
-            id: nextID, 
+            id: nextID++, 
             title: '',
             employer: '',
-            
          });
-        nextID++;
     }
     
     return(
