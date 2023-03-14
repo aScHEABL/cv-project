@@ -51,8 +51,6 @@ const reducer = (state, action) => {
                     ...state.jobs,
                     {
                         id: action.id,
-                        title: action.title,
-                        employer: action.employer
                     }
                 ]
             }
@@ -65,7 +63,10 @@ const reducer = (state, action) => {
                             ...job,
                             title: action.title,
                             employer: action.employer,
-
+                            startDate: action.startDate,
+                            endDate: action.endDate,
+                            city: action.city,
+                            desc: action.desc,
                         }
                     }
                     return job;
