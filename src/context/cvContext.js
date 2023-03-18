@@ -54,24 +54,12 @@ const reducer = (state, action) => {
                     }
                 ]
             }
-        case 'CHANGE_JOB':
-            return {
-                ...state,
-                jobs: state.jobs.map((job) => {
-                    if (job.id === action.id) {
-                        return {
-                            ...job,
-                            title: action.title,
-                            employer: action.employer,
-                            startDate: action.startDate,
-                            endDate: action.endDate,
-                            city: action.city,
-                            desc: action.desc,
-                        }
-                    }
-                    return job;
-                })
-            }
+            case 'CHANGE_JOB':
+                return {
+                    ...state,
+                    jobs: state.jobs.map((job) => 
+                             job.id === action.id ? { ...job, [action.key]: action.value } : job)
+                }
         case 'ADD_SKILL':
             return {
                 ...state,
