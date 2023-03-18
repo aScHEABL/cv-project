@@ -4,7 +4,7 @@ import { useCvContext } from "../../context/cvContext";
 export default function WE_LIST() {
     const [cvState, dispatch] = useCvContext();
     const handleChange = (id, key, value) => {
-        dispatch({ type: 'CHANGE_JOB', id: id, key: key, value: value })
+        dispatch({ type: 'UPDATE_JOB', id: id, key: key, value: value })
     }
     const nodes = cvState.jobs.map((job) => (
         <React.Fragment key={job.id}>
