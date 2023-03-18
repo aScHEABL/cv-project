@@ -43,15 +43,14 @@ const Sidebar = () => {
             <div>
                 <h3 className="text-white text-sm tracking-[0.25em] font-work-sans font-normal pb-6">EDUCATION</h3>
                 <div className="flex flex-wrap gap-1">
-                    <h3 className="text-white text-[12px] font-work-sans font-medium">{cvState.school}</h3>
+                    <label className="text-white text-[11px] font-work-sans font-normal">{cvState.education.degree}</label>
                     <div className="h-0 w-full"></div>
-                    <label className="text-white text-[11px] font-work-sans font-normal text-[#a6a6a6]">{cvState.degree}</label>
-                    <div className="flex gap-1 w-full">
-                        <label className="text-white text-[10px] font-work-sans font-normal text-[#a6a6a6]">{cvState.eduStartDate}</label>
-                        <label className="text-white text-[10px] font-work-sans font-normal text-[#a6a6a6]">
-                            {cvState.eduStartDate && cvState.eduEndDate !== "" ? <label> - </label> : null }
-                        </label>
-                        <label className="text-white text-[10px] font-work-sans font-normal text-[#a6a6a6]">{cvState.eduEndDate}</label>
+                    <h3 className="text-[#a6a6a6] text-[12px] font-work-sans font-medium">{cvState.education.school}</h3>
+                    <div className="flex flex-wrap gap-1 w-full">
+                        <label className="text-[10px] font-work-sans font-normal text-[#a6a6a6]">{cvState.education.startDate}</label>
+                        {cvState.education.startDate && cvState.education.endDate ? <label className="text-white text-[10px] font-work-sans font-normal text-[#a6a6a6]"> - </label> : null }
+                        <label className="text-[10px] font-work-sans font-normal text-[#a6a6a6]">{cvState.education.endDate}</label>
+                        <label className="text-[10px] font-work-sans font-normal text-[#a6a6a6] w-full">{cvState.education.city}</label>
                     </div>
                 </div>
             </div>

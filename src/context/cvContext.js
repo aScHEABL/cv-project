@@ -14,7 +14,7 @@ const reducer = (state, action) => {
                 ...state,
                 personalInfo: {
                         ...state.personalInfo,
-                        [action.key]: action.value
+                        [action.key]: action.value,
                     }
             }
         case 'ADD_JOB':
@@ -32,12 +32,20 @@ const reducer = (state, action) => {
                     }
                 ]
             }
-            case 'CHANGE_JOB':
-                return {
-                    ...state,
-                    jobs: state.jobs.map((job) => 
-                             job.id === action.id ? { ...job, [action.key]: action.value } : job)
+        case 'UPDATE_JOB':
+            return {
+                ...state,
+                jobs: state.jobs.map((job) => 
+                            job.id === action.id ? { ...job, [action.key]: action.value } : job)
+            }
+        case 'UPDATE_EDUCATION':
+            return {
+                ...state,
+                education: {
+                    ...state.education,
+                    [action.key]: action.value,
                 }
+            }
         case 'ADD_SKILL':
             return {
                 ...state,
@@ -63,6 +71,13 @@ const CvContextProvider = ( { children }) => {
             intro: '',
         },
         jobs: [],
+        education: {
+            school: '',
+            degree: '',
+            startDate: '',
+            endDate: '',
+            city: '',
+        },
         skills: [],
     })
     return (
