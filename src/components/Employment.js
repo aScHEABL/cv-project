@@ -15,7 +15,7 @@ const Employment = () => {
             employer: '',
             startDate: '',
             endDate: '',
-            country: ''
+            location: ''
          })
     }
     

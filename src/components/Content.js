@@ -16,8 +16,8 @@ const Content = () => {
                 <h5 className="text-[11px]">{ job.startDate }</h5>
                 { job.startDate && job.endDate ? <label className="text-[11px]"> - </label> : null}
                 <h5 className="text-[11px]">{ job.endDate }</h5>
-                { job.endDate ? <label className="text-[11px] px-1">|</label> : null }
-                <h5 className="text-[11px]">{ job.country }</h5>
+                { job.startDate && job.endDate ? <label className="text-[11px] px-1">|</label> : null }
+                <h5 className="text-[11px]">{ job.location }</h5>
             </div>
             <p className="font-work-sans text-[11px] font-normal text-[#2e2e2e]">
                 { job.desc }
@@ -32,7 +32,7 @@ const Content = () => {
                 <div className="h-0.5 w-16 bg-component-gray" />
                 <div className="h-0 w-full"></div>
                 <p className="font-work-sans text-[11px] font-normal text-[#2e2e2e] ">
-                    {cvState.intro}
+                    {cvState.personalInfo.intro}
                 </p>
             </div>
             { jobNodes }

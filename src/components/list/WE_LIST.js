@@ -25,7 +25,7 @@ export default function WE_LIST() {
                 onChange={(e) => handleChange(job.id, e.target.name, e.target.value)} />
             </div>
             <input className="bg-input-box-gray h-12 rounded px-3 text-white" 
-            placeholder="Country" name="country" value={job.country}
+            placeholder="Location" name="location" value={job.location}
             onChange={(e) => handleChange(job.id, e.target.name, e.target.value)} />
             <textarea className="h-32 col-span-2 bg-input-box-gray rounded 
             px-3 py-3 text-white" 
