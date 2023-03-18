@@ -11,7 +11,13 @@ const Employment = () => {
         dispatch({
             type: 'ADD_JOB', 
             id: nextID++,
-         });
+            title: '',
+            employer: '',
+            startDate: '',
+            endDate: '',
+            country: ''
+         })
+         console.log(cvState);
     }
     
     return(

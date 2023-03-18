@@ -51,6 +51,11 @@ const reducer = (state, action) => {
                     ...state.jobs,
                     {
                         id: action.id,
+                        title: action.title,
+                        employer: action.employer,
+                        startDate: action.startDate,
+                        endDate: action.endDate,
+                        country: action.country
                     }
                 ]
             }
