@@ -17,7 +17,6 @@ const Employment = () => {
             endDate: '',
             country: ''
          })
-         console.log(cvState);
     }
     
     return(
