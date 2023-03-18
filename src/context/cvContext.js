@@ -9,40 +9,13 @@ const useCvContext = () => {
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case 'firstName':
+        case 'UPDATE_PERSONAL_INFO':
             return {
                 ...state,
-                firstName: action.payload.firstName
-            }
-        case 'lastName':
-            return {
-                ...state,
-                lastName: action.payload.lastName
-            }
-        case 'address':
-            return {
-                ...state,
-                address: action.payload.address
-            }
-        case 'website':
-            return {
-                ...state,
-                website: action.payload.website
-            }
-        case 'email':
-            return {
-                ...state,
-                email: action.payload.email
-            }
-        case 'phone':
-            return {
-                ...state,
-                phone: action.payload.phone
-            }
-        case 'intro':
-            return {
-                ...state,
-                intro: action.payload.intro
+                personalInfo: {
+                        ...state.personalInfo,
+                        [action.key]: action.value
+                    }
             }
         case 'ADD_JOB':
             return {
@@ -55,7 +28,7 @@ const reducer = (state, action) => {
                         employer: action.employer,
                         startDate: action.startDate,
                         endDate: action.endDate,
-                        country: action.country
+                        location: action.location
                     }
                 ]
             }
@@ -80,13 +53,15 @@ const reducer = (state, action) => {
 
 const CvContextProvider = ( { children }) => {
     const valueAndDispatcher = useReducer(reducer, {
-        firstName: '',
-        lastName: '',
-        address: '',
-        website: '',
-        email: '',
-        phone: '',
-        intro: '',
+        personalInfo: {
+            firstName: '',
+            lastName: '',
+            address: '',
+            website: '',
+            email: '',
+            phone: '',
+            intro: '',
+        },
         jobs: [],
         skills: [],
     })
