@@ -51,8 +51,17 @@ const reducer = (state, action) => {
                 ...state,
                 skills: [
                     ...state.skills,
-                    action.payload.skills
+                    {
+                        id: action.id,
+                        skillName: action.skillName,
+                    }
                 ]
+            }
+        case 'UPDATE_SKILL':
+            return {
+                ...state,
+                skills: state.skills.map((skill) => 
+                skill.id === action.id ? {...skill, [action.key]: action.value } : skill)
             }
         default:
             return state;

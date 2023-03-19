@@ -4,6 +4,10 @@ import { useCvContext } from "../context/cvContext";
 const Sidebar = () => {
     const [cvState] = useCvContext();
 
+    const skillNodes = cvState.skills.map((skill) => (
+        <li key={skill.id}>{skill.skillName}</li>
+    ))
+
     const iconStyle = {
         height: '16px',
         width: '16px'
@@ -56,13 +60,15 @@ const Sidebar = () => {
             </div>
             <div>
                 <h3 className="text-white text-sm tracking-[0.25em] font-work-sans font-normal pb-6">SKILLS</h3>
-                <ul className="text-white pl-5 flex flex-warp flex-col text-[11px] text-[#a6a6a6] gap-1">
-                    <li>{cvState.skill_1}</li>
-                    <li>{cvState.skill_2}</li>
-                    <li>{cvState.skill_3}</li>
-                </ul>
+            <ul className="list-disc text-white pl-5 flex flex-warp flex-col text-[11px] text-[#a6a6a6] gap-1">
+                {skillNodes}
+            </ul>
             </div>
         </div>
     )
 }
 export default Sidebar;
+
+                //     <li>{cvState.skill_1}</li>
+                //     <li>{cvState.skill_2}</li>
+                //     <li>{cvState.skill_3}</li>
