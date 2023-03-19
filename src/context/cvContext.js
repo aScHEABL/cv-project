@@ -63,6 +63,11 @@ const reducer = (state, action) => {
                 skills: state.skills.map((skill) => 
                 skill.id === action.id ? {...skill, [action.key]: action.value } : skill)
             }
+        case 'DELETE_SKILL':
+            return {
+                ...state,
+                skills: state.skills.filter((skill) => skill.id !== action.id)
+            }
         default:
             return state;
     }
