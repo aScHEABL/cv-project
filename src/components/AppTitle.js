@@ -1,5 +1,8 @@
 import React from "react";
+import PreviewSection from "./PreviewSection";
 import { useCvContext } from "../context/cvContext";
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 let jobID = 0;
 let skillID = 0;
@@ -73,6 +76,24 @@ const AppTitle = () => {
                  dispatch({ type: 'UPDATE_SKILL', id: 4, key: 'skillName', value: 'ThreeJS' });
                  dispatch({ type: 'UPDATE_SKILL', id: 5, key: 'skillName', value: 'ExpressJS' });
                 break;
+            case "SAVE":
+                console.log('Downloading PDF...');
+                const input = document.getElementById('preview');
+                html2canvas(input)
+                .then((canvas) => {
+                    const imgData = canvas.toDataURL('image/png');
+                    const pdf = new jsPDF();
+
+                    // Make img fit to PDF proportions
+                    const imgProps= pdf.getImageProperties(imgData);
+                    const pdfWidth = pdf.internal.pageSize.getWidth();
+                    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+                    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+
+                    // Download PDF to user
+                    pdf.save("resume.pdf");
+                })
+                break;
             default:
                 console.log('Nothing')
         }
@@ -82,7 +103,8 @@ const AppTitle = () => {
         <div className="py-4 px-8 flex items-center justify-between h-28 w-full bg-component-gray rounded-xl">
             <h1 className="text-white text-3xl h-fit ">CV Creator</h1>
             <div className="flex items-center justify-between gap-4">
-                <button className="flex gap-2 bg-mint rounded-xl p-4 text-lg items-center">
+                <button className="flex gap-2 bg-mint rounded-xl p-4 text-lg items-center"
+                onClick={() => handleClick("SAVE")}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
                     </svg>
