@@ -5,7 +5,7 @@ const Content = () => {
     const [cvState] = useCvContext();
 
     const jobNodes = cvState.jobs.map((job) => (
-        <div key={job.id} className="flex flex-wrap gap-3 pb-8">
+        <div key={job.id} className="flex flex-wrap gap-3">
             <h3 className="w-full font-work-sans text-[13px] tracking-[4px]">WORK EXPERIENCE #{job.id + 1}</h3>
             <div className="h-0.5 w-16 bg-component-gray" />
             <div className="h-0 w-full"></div>
