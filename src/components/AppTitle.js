@@ -1,80 +1,83 @@
 import React from "react";
-import PreviewSection from "./PreviewSection";
 import { useCvContext } from "../context/cvContext";
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
 let jobID = 0;
 let skillID = 0;
+let isAutofill = false;
 const AppTitle = () => {
     const [cvState, dispatch] = useCvContext();
     const handleClick = (action) => {
         switch (action) {
             case "AUTOFILL":
-                console.log('Page is auto filled!');
-                dispatch({ type: 'UPDATE_PERSONAL_INFO', key: 'firstName', value: 'NIKOLA' } );
-                dispatch({ type: 'UPDATE_PERSONAL_INFO', key: 'lastName', value: 'TESLA' });
-                dispatch({ type: 'UPDATE_PERSONAL_INFO', key: 'website', value: 'nikolatesla.com' });
-                dispatch({ type: 'UPDATE_PERSONAL_INFO', key: 'email', value: 'nikolatesla@gmail.com' });
-                dispatch({ type: 'UPDATE_PERSONAL_INFO', key: 'address', value: 'New York, US' });
-                dispatch({ type: 'UPDATE_PERSONAL_INFO', key: 'phone', value: '555-555-5555' });
-                dispatch({ type: 'UPDATE_PERSONAL_INFO', key: 'intro', value: 'Motivated and results-driven Senior Software \
-                Engineer with 8+ years of experience in my field. I have continuously demonstrated experience in \
-                improving software performance by implementing new ideas, updating, testing and coding.\
-                  Experience in development tools which increase accuracy and performance of software\
-                  , especially in React and with React Redux, are my specialization. In my free time, I go on\
-                   a walk with the two of my dogs or spend time with friends. I also play chess and appreciate any competitive \
-                   environment when pursuing sports.' });
-                   dispatch({
-                    type: 'ADD_JOB', 
-                    id: jobID++,
-                    title: '',
-                    employer: '',
-                    startDate: '',
-                    endDate: '',
-                    location: ''
-                 })
-                 dispatch({
-                    type: 'ADD_JOB', 
-                    id: jobID++,
-                    title: '',
-                    employer: '',
-                    startDate: '',
-                    endDate: '',
-                    location: ''
-                 })
-                 dispatch({ type: 'UPDATE_JOB', id: 0, key: 'title', value: 'Network Engineer' });
-                 dispatch({ type: 'UPDATE_JOB', id: 0, key: 'employer', value: 'Far Eastern Group' });
-                 dispatch({ type: 'UPDATE_JOB', id: 0, key: 'startDate', value: '2022-10' });
-                 dispatch({ type: 'UPDATE_JOB', id: 0, key: 'endDate', value: 'Present' });
-                 dispatch({ type: 'UPDATE_JOB', id: 0, key: 'location', value: 'New Taipei, Taiwan' });
-                 dispatch({ type: 'UPDATE_JOB', id: 0, key: 'desc', value: 'I provided technical leadership for complex projects. I used the latest technologies such as Cloud Service, Visual Studio 2019 and Azure DevOps. I gained experience with data technologies such as SQL Servers, NoSQL databases, full text search engines and caching. My daily work consisted mostly of maintaining full project life-cycle tasks including testing, debugging, technical analysis, design and coding.' });
-                 dispatch({ type: 'UPDATE_JOB', id: 1, key: 'title', value: 'Lifeguard' });
-                 dispatch({ type: 'UPDATE_JOB', id: 1, key: 'employer', value: '輝宇運動事業有限公司' });
-                 dispatch({ type: 'UPDATE_JOB', id: 1, key: 'startDate', value: '2022-02' });
-                 dispatch({ type: 'UPDATE_JOB', id: 1, key: 'endDate', value: '2022-10' });
-                 dispatch({ type: 'UPDATE_JOB', id: 1, key: 'location', value: 'New Taipei, Taiwan' });
-                 dispatch({ type: 'UPDATE_JOB', id: 1, key: 'desc', value: 'Experienced and certified lifeguard with a passion for water safety. Skilled in monitoring and maintaining safe swimming conditions, performing water rescues, and providing first aid. Able to maintain a high level of alertness, professionalism and focus while on duty.' });
-                 
-                 dispatch({ type: 'UPDATE_EDUCATION', key: 'school', value: 'University of Chicago' });
-                 dispatch({ type: 'UPDATE_EDUCATION', key: 'degree', value: 'BSMIS' });
-                 dispatch({ type: 'UPDATE_EDUCATION', key: 'startDate', value: '2022-09' });
-                 dispatch({ type: 'UPDATE_EDUCATION', key: 'endDate', value: '2025-06' });
-                 dispatch({ type: 'UPDATE_EDUCATION', key: 'city', value: 'New Taipei City' });
-
-                 dispatch({ type: 'ADD_SKILL', id: skillID++, skillName: '' });
-                 dispatch({ type: 'ADD_SKILL', id: skillID++, skillName: '' });
-                 dispatch({ type: 'ADD_SKILL', id: skillID++, skillName: '' });
-                 dispatch({ type: 'ADD_SKILL', id: skillID++, skillName: '' });
-                 dispatch({ type: 'ADD_SKILL', id: skillID++, skillName: '' });
-                 dispatch({ type: 'ADD_SKILL', id: skillID++, skillName: '' });
-
-                 dispatch({ type: 'UPDATE_SKILL', id: 0, key: 'skillName', value: 'ReactJS' });
-                 dispatch({ type: 'UPDATE_SKILL', id: 1, key: 'skillName', value: 'NodeJS' });
-                 dispatch({ type: 'UPDATE_SKILL', id: 2, key: 'skillName', value: 'PostgreSQL' });
-                 dispatch({ type: 'UPDATE_SKILL', id: 3, key: 'skillName', value: 'Tailwind CSS' });
-                 dispatch({ type: 'UPDATE_SKILL', id: 4, key: 'skillName', value: 'ThreeJS' });
-                 dispatch({ type: 'UPDATE_SKILL', id: 5, key: 'skillName', value: 'ExpressJS' });
+                if (!isAutofill) {
+                    console.log('Page is auto filled!');
+                    isAutofill = true;
+                    dispatch({ type: 'UPDATE_PERSONAL_INFO', key: 'firstName', value: 'NIKOLA' } );
+                    dispatch({ type: 'UPDATE_PERSONAL_INFO', key: 'lastName', value: 'TESLA' });
+                    dispatch({ type: 'UPDATE_PERSONAL_INFO', key: 'website', value: 'nikolatesla.com' });
+                    dispatch({ type: 'UPDATE_PERSONAL_INFO', key: 'email', value: 'nikolatesla@gmail.com' });
+                    dispatch({ type: 'UPDATE_PERSONAL_INFO', key: 'address', value: 'New York, US' });
+                    dispatch({ type: 'UPDATE_PERSONAL_INFO', key: 'phone', value: '555-555-5555' });
+                    dispatch({ type: 'UPDATE_PERSONAL_INFO', key: 'intro', value: 'Motivated and results-driven Senior Software \
+                    Engineer with 8+ years of experience in my field. I have continuously demonstrated experience in \
+                    improving software performance by implementing new ideas, updating, testing and coding.\
+                      Experience in development tools which increase accuracy and performance of software\
+                      , especially in React and with React Redux, are my specialization. In my free time, I go on\
+                       a walk with the two of my dogs or spend time with friends. I also play chess and appreciate any competitive \
+                       environment when pursuing sports.' });
+                       dispatch({
+                        type: 'ADD_JOB', 
+                        id: jobID++,
+                        title: '',
+                        employer: '',
+                        startDate: '',
+                        endDate: '',
+                        location: ''
+                     })
+                     dispatch({
+                        type: 'ADD_JOB', 
+                        id: jobID++,
+                        title: '',
+                        employer: '',
+                        startDate: '',
+                        endDate: '',
+                        location: ''
+                     })
+                     dispatch({ type: 'UPDATE_JOB', id: 0, key: 'title', value: 'Network Engineer' });
+                     dispatch({ type: 'UPDATE_JOB', id: 0, key: 'employer', value: 'Far Eastern Group' });
+                     dispatch({ type: 'UPDATE_JOB', id: 0, key: 'startDate', value: '2022-10' });
+                     dispatch({ type: 'UPDATE_JOB', id: 0, key: 'endDate', value: 'Present' });
+                     dispatch({ type: 'UPDATE_JOB', id: 0, key: 'location', value: 'New Taipei, Taiwan' });
+                     dispatch({ type: 'UPDATE_JOB', id: 0, key: 'desc', value: 'I provided technical leadership for complex projects. I used the latest technologies such as Cloud Service, Visual Studio 2019 and Azure DevOps. I gained experience with data technologies such as SQL Servers, NoSQL databases, full text search engines and caching. My daily work consisted mostly of maintaining full project life-cycle tasks including testing, debugging, technical analysis, design and coding.' });
+                     dispatch({ type: 'UPDATE_JOB', id: 1, key: 'title', value: 'Lifeguard' });
+                     dispatch({ type: 'UPDATE_JOB', id: 1, key: 'employer', value: '輝宇運動事業有限公司' });
+                     dispatch({ type: 'UPDATE_JOB', id: 1, key: 'startDate', value: '2022-02' });
+                     dispatch({ type: 'UPDATE_JOB', id: 1, key: 'endDate', value: '2022-10' });
+                     dispatch({ type: 'UPDATE_JOB', id: 1, key: 'location', value: 'New Taipei, Taiwan' });
+                     dispatch({ type: 'UPDATE_JOB', id: 1, key: 'desc', value: 'Experienced and certified lifeguard with a passion for water safety. Skilled in monitoring and maintaining safe swimming conditions, performing water rescues, and providing first aid. Able to maintain a high level of alertness, professionalism and focus while on duty.' });
+                     
+                     dispatch({ type: 'UPDATE_EDUCATION', key: 'school', value: 'University of Chicago' });
+                     dispatch({ type: 'UPDATE_EDUCATION', key: 'degree', value: 'BSMIS' });
+                     dispatch({ type: 'UPDATE_EDUCATION', key: 'startDate', value: '2022-09' });
+                     dispatch({ type: 'UPDATE_EDUCATION', key: 'endDate', value: '2025-06' });
+                     dispatch({ type: 'UPDATE_EDUCATION', key: 'city', value: 'New Taipei City' });
+    
+                     dispatch({ type: 'ADD_SKILL', id: skillID++, skillName: '' });
+                     dispatch({ type: 'ADD_SKILL', id: skillID++, skillName: '' });
+                     dispatch({ type: 'ADD_SKILL', id: skillID++, skillName: '' });
+                     dispatch({ type: 'ADD_SKILL', id: skillID++, skillName: '' });
+                     dispatch({ type: 'ADD_SKILL', id: skillID++, skillName: '' });
+                     dispatch({ type: 'ADD_SKILL', id: skillID++, skillName: '' });
+    
+                     dispatch({ type: 'UPDATE_SKILL', id: 0, key: 'skillName', value: 'ReactJS' });
+                     dispatch({ type: 'UPDATE_SKILL', id: 1, key: 'skillName', value: 'NodeJS' });
+                     dispatch({ type: 'UPDATE_SKILL', id: 2, key: 'skillName', value: 'PostgreSQL' });
+                     dispatch({ type: 'UPDATE_SKILL', id: 3, key: 'skillName', value: 'Tailwind CSS' });
+                     dispatch({ type: 'UPDATE_SKILL', id: 4, key: 'skillName', value: 'ThreeJS' });
+                     dispatch({ type: 'UPDATE_SKILL', id: 5, key: 'skillName', value: 'ExpressJS' });
+                } else console.log("Page is filled already!");
                 break;
             case "SAVE":
                 console.log('Downloading PDF...');
