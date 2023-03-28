@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { useCvContext } from "../context/cvContext";
 import WE_LIST from "./list/WE_LIST";
 
