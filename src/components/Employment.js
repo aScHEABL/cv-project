@@ -7,12 +7,16 @@ let nextID = 0;
 const Employment = () => {
     const [cvState, dispatch] = useCvContext();
 
-    
     const handleClick = () => {
         dispatch({
             type: 'ADD_JOB', 
             id: nextID++,
-         });
+            title: '',
+            employer: '',
+            startDate: '',
+            endDate: '',
+            location: ''
+         })
     }
     
     return(

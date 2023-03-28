@@ -9,40 +9,13 @@ const useCvContext = () => {
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case 'firstName':
+        case 'UPDATE_PERSONAL_INFO':
             return {
                 ...state,
-                firstName: action.payload.firstName
-            }
-        case 'lastName':
-            return {
-                ...state,
-                lastName: action.payload.lastName
-            }
-        case 'address':
-            return {
-                ...state,
-                address: action.payload.address
-            }
-        case 'website':
-            return {
-                ...state,
-                website: action.payload.website
-            }
-        case 'email':
-            return {
-                ...state,
-                email: action.payload.email
-            }
-        case 'phone':
-            return {
-                ...state,
-                phone: action.payload.phone
-            }
-        case 'intro':
-            return {
-                ...state,
-                intro: action.payload.intro
+                personalInfo: {
+                        ...state.personalInfo,
+                        [action.key]: action.value,
+                    }
             }
         case 'ADD_JOB':
             return {
@@ -51,34 +24,49 @@ const reducer = (state, action) => {
                     ...state.jobs,
                     {
                         id: action.id,
+                        title: action.title,
+                        employer: action.employer,
+                        startDate: action.startDate,
+                        endDate: action.endDate,
+                        location: action.location
                     }
                 ]
             }
-        case 'CHANGE_JOB':
+        case 'UPDATE_JOB':
             return {
                 ...state,
-                jobs: state.jobs.map((job) => {
-                    if (job.id === action.id) {
-                        return {
-                            ...job,
-                            title: action.title,
-                            employer: action.employer,
-                            startDate: action.startDate,
-                            endDate: action.endDate,
-                            city: action.city,
-                            desc: action.desc,
-                        }
-                    }
-                    return job;
-                })
+                jobs: state.jobs.map((job) => 
+                            job.id === action.id ? { ...job, [action.key]: action.value } : job)
+            }
+        case 'UPDATE_EDUCATION':
+            return {
+                ...state,
+                education: {
+                    ...state.education,
+                    [action.key]: action.value,
+                }
             }
         case 'ADD_SKILL':
             return {
                 ...state,
                 skills: [
                     ...state.skills,
-                    action.payload.skills
+                    {
+                        id: action.id,
+                        skillName: action.skillName,
+                    }
                 ]
+            }
+        case 'UPDATE_SKILL':
+            return {
+                ...state,
+                skills: state.skills.map((skill) => 
+                skill.id === action.id ? {...skill, [action.key]: action.value } : skill)
+            }
+        case 'DELETE_SKILL':
+            return {
+                ...state,
+                skills: state.skills.filter((skill) => skill.id !== action.id)
             }
         default:
             return state;
@@ -87,14 +75,23 @@ const reducer = (state, action) => {
 
 const CvContextProvider = ( { children }) => {
     const valueAndDispatcher = useReducer(reducer, {
-        firstName: '',
-        lastName: '',
-        address: '',
-        website: '',
-        email: '',
-        phone: '',
-        intro: '',
+        personalInfo: {
+            firstName: '',
+            lastName: '',
+            address: '',
+            website: '',
+            email: '',
+            phone: '',
+            intro: '',
+        },
         jobs: [],
+        education: {
+            school: '',
+            degree: '',
+            startDate: '',
+            endDate: '',
+            city: '',
+        },
         skills: [],
     })
     return (

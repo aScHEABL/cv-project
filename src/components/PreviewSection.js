@@ -7,7 +7,7 @@ import Content from "./Content";
 const PreviewSection = () => {
 
     return(
-        <section className="grid grid-rows-[0.8fr_0.25fr_5fr] grid-cols-[3.5fr_7fr] h-preview-section w-preview-section sticky top-5 bottom-5 bg-white rounded-lg shrink-0">
+        <section id="preview" className="grid grid-rows-[0.8fr_0.25fr_5fr] grid-cols-[3.5fr_7fr] h-preview-section w-preview-section sticky top-5 bottom-5 bg-white rounded-lg shrink-0">
             <Header />
             <CurrentPos />
             <Sidebar />
